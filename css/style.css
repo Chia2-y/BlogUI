@@ -467,8 +467,8 @@ color:#FFF;
 .content {
 	position: relative;
 	min-height: 500px;
-	max-width: 825px;
-	margin: 0 auto;
+	max-width: 760px;
+	margin: 0 0 0 320px;
 
 
 }
@@ -1222,12 +1222,14 @@ color:#FFF;
 /*侧边栏*/
 .sidebar {
 	float: left;
-	margin-left: -360px;
+	margin-left: -480px;
 	width: 350px;
 	position: relative;
 }
 .sidebar-left{
-	margin-right: -360px;margin-left: 170px;width: 190px
+	margin-right: -360px;
+	margin-left: 110px;
+	width: 190px;
 }
 .widget {
 	clear: both;
