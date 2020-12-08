@@ -1223,8 +1223,11 @@ color:#FFF;
 .sidebar {
 	float: left;
 	margin-left: -360px;
-	width: 250px;
+	width: 350px;
 	position: relative;
+}
+.sidebar-left{
+	margin-right: -360px;margin-left: 170px;width: 190px
 }
 .widget {
 	clear: both;
