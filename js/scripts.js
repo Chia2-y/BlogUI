@@ -2,7 +2,7 @@
 /*window.onresize=function(){
     window.location.reload();
 }*/
- 
+
 //页面加载
 $('body').show();
 $('.version').text(NProgress.version);
@@ -17,7 +17,7 @@ setTimeout(function () {
     $('img').attr('draggable', 'false');
     $('a').attr('draggable', 'false');
 })();
- 
+
 //设置Cookie
 function setCookie(name, value, time) {
     var strsec = getsec(time);
@@ -36,7 +36,7 @@ function getsec(str) {
         return str1 * 24 * 60 * 60 * 1000;
     }
 }
- 
+
 //获取Cookie
 function getCookie(name) {
     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
@@ -46,7 +46,7 @@ function getCookie(name) {
         return null;
     }
 }
- 
+
 //导航智能定位
 $.fn.navSmartFloat = function () {
     var position = function (element) {
@@ -79,10 +79,10 @@ $.fn.navSmartFloat = function () {
         position($(this));
     });
 };
- 
+
 //启用导航定位
 $("#navbar").navSmartFloat();
- 
+
 //返回顶部按钮
 $("#gotop").hide();
 $(window).scroll(function () {
@@ -97,7 +97,7 @@ $("#gotop").click(function () {
         'scrollTop': 0
     }, 500);
 });
- 
+
 //图片延时加载
 $("img.thumb").lazyload({
     placeholder: "/Home/images/occupying.png",
@@ -107,16 +107,16 @@ $(".single .content img").lazyload({
     placeholder: "/Home/images/occupying.png",
     effect: "fadeIn"
 });
- 
+
 //IE6-9禁止用户选中文本
 document.body.onselectstart = document.body.ondrag = function () {
     return false;
 };
- 
+
 //启用工具提示
 $('[data-toggle="tooltip"]').tooltip();
- 
- 
+
+
 //无限滚动反翻页
 jQuery.ias({
 	history: false,
@@ -136,22 +136,7 @@ jQuery.ias({
 		$('.excerpt a').attr('draggable','false');
 	}
 });
- 
-//鼠标滚动超出侧边栏高度绝对定位
-$(window).scroll(function () {
-    var sidebar = $('.sidebar');
-    var sidebarHeight = sidebar.height();
-    var windowScrollTop = $(window).scrollTop();
-    if (windowScrollTop > sidebarHeight - 60 && sidebar.length) {
-        $('.fixed').css({
-            'position': 'fixed',
-            'top': '70px',
-            'width': '360px'
-        });
-    } else {
-        $('.fixed').removeAttr("style");
-    }
-});
+
 
 //禁止右键菜单
 /*window.oncontextmenu = function(){
@@ -196,12 +181,12 @@ $(window).scroll(function () {
 })();
 
 /*禁止键盘操作*/
-document.onkeydown=function(event){
-	var e = event || window.event || arguments.callee.caller.arguments[0];
-	if((e.keyCode === 123) || (e.ctrlKey) || (e.ctrlKey) && (e.keyCode === 85)){
-		return false;
-	}
-}; 
+// document.onkeydown=function(event){
+// 	var e = event || window.event || arguments.callee.caller.arguments[0];
+// 	if((e.keyCode === 123) || (e.ctrlKey) || (e.ctrlKey) && (e.keyCode === 85)){
+// 		return false;
+// 	}
+// };
 
 /*文章评论*/
 $(function(){
@@ -215,16 +200,16 @@ $(function(){
 		if(commentContent.val() === ''){
 			promptText.text('请留下您的评论');
 			return false;
-		} 
+		}
 		commentButton.attr('disabled',true);
 		commentButton.addClass('disabled');
 		promptText.text('正在提交...');
-		$.ajax({   
+		$.ajax({
 			type:"POST",
 			url:"test.php?id=" + articleid,
-			//url:"/Article/comment/id/" + articleid,   
-			data:"commentContent=" + replace_em(commentContent.val()),   
-			cache:false, //不缓存此页面  
+			//url:"/Article/comment/id/" + articleid,
+			data:"commentContent=" + replace_em(commentContent.val()),
+			cache:false, //不缓存此页面
 			success:function(data){
 				alert(data);
 				promptText.text('评论成功!');
