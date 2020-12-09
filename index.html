@@ -24,6 +24,41 @@
     <!--[if lt IE 9]>
     <script>window.location.href = 'upgrade-browser.html';</script>
     <![endif]-->
+    <style>
+        #container {
+            margin: 0 auto;
+            float: none;
+            width: 100%;
+            height: 300px;
+        }
+
+        .sc-actions:nth-of-type(1) {
+            display: none;
+        }
+
+        .sc-actions:nth-of-type(2) {
+            width: 30%;
+        }
+
+        .sc-actions:nth-of-type(3),.sc-actions:nth-of-type(2) {
+            cursor: pointer;
+        }
+
+        .sc-actions:nth-of-type(4) {
+            width: 33%;
+        }
+
+        .sc-week-item {
+            background-color: unset !important;
+            border: unset !important;
+        }
+
+        .sc-item {
+            padding-top: 8px !important;
+            border-width: 0 0 1px 0!important;
+        }
+
+    </style>
 </head>
 
 <body class="user-select">
@@ -175,7 +210,7 @@
                 </div>
             </div>
             <div class="widget">
-                <table id='mycalendar' class='calendar'></table>
+                <div id="container"></div>
             </div>
             <div class="widget widget_hot">
                 <h3>热门文章</h3>
@@ -275,9 +310,10 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.ias.js"></script>
 <script src="js/scripts.js"></script>
-</body>
-<script type="text/javascript" src="js/dcalendar.picker.js"></script>
-<script type="text/javascript">
-    $('#mycalendar').dcalendar();
+<link rel="stylesheet" href="css/simple-calendar.css">
+<script src="js/simple-calendar-es.js"></script>
+<script>
+    let myCalendar = new SimpleCalendar('#container');
 </script>
+</body>
 </html>
