@@ -61,12 +61,18 @@
     <aside class="sidebar-left sidebar">
         <div class="fixed-left">
             <ul class="nav nav-pills nav-stacked  left-menu">
-                <li role="presentation" class="active-menu"><a href="#" class="fa fa-hacker-news menu"><span class="menu-span">首页</span></a></li>
-                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span class="menu-span">前端技术</span></a></li>
-                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span class="menu-span">后端程序</span></a></li>
-                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span class="menu-span">管理系统</span></a></li>
-                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span class="menu-span">授人以渔</span></a></li>
-                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span class="menu-span">程序人生</span></a></li>
+                <li role="presentation" class="active-menu"><a href="#" class="fa fa-hacker-news menu"><span
+                        class="menu-span">首页</span></a></li>
+                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span
+                        class="menu-span">前端技术</span></a></li>
+                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span
+                        class="menu-span">后端程序</span></a></li>
+                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span
+                        class="menu-span">管理系统</span></a></li>
+                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span
+                        class="menu-span">授人以渔</span></a></li>
+                <li role="presentation" class=""><a href="#" class="fa fa-hacker-news menu"><span
+                        class="menu-span">程序人生</span></a></li>
             </ul>
         </div>
     </aside>
@@ -161,23 +167,26 @@
             </span></div>
                 </form>
             </div>
-        <div class="widget widget_sentence">
-            <div class="widget-sentence-content">
-                <h4>2016年01月05日星期二</h4>
-                <p>Do not let what you cannot do interfere with what you can do.<br/>
-                    别让你不能做的事妨碍到你能做的事。（John Wooden）</p>
+            <div class="widget widget_sentence">
+                <div class="widget-sentence-content">
+                    <h4>2016年01月05日星期二</h4>
+                    <p>Do not let what you cannot do interfere with what you can do.<br/>
+                        别让你不能做的事妨碍到你能做的事。（John Wooden）</p>
+                </div>
             </div>
-        </div>
-        <div class="widget widget_hot">
-            <h3>热门文章</h3>
-            <ul>
-                <li>
-                    <a href="">
-                        <span class="text">php如何判断一个日期的格式是否正确</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <div class="widget">
+                <table id='mycalendar' class='calendar'></table>
+            </div>
+            <div class="widget widget_hot">
+                <h3>热门文章</h3>
+                <ul>
+                    <li>
+                        <a href="">
+                            <span class="text">php如何判断一个日期的格式是否正确</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </aside>
@@ -267,4 +276,8 @@
 <script src="js/jquery.ias.js"></script>
 <script src="js/scripts.js"></script>
 </body>
+<script type="text/javascript" src="js/dcalendar.picker.js"></script>
+<script type="text/javascript">
+    $('#mycalendar').dcalendar();
+</script>
 </html>
