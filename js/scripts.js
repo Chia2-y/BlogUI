@@ -118,24 +118,24 @@ $('[data-toggle="tooltip"]').tooltip();
 
 
 //无限滚动反翻页
-jQuery.ias({
-	history: false,
-	container : '.content',
-	item: '.excerpt',
-	pagination: '.pagination',
-	next: '.next-page a',
-	trigger: '查看更多',
-	loader: '<div class="pagination-loading"><img src="/Home/images/loading.gif" /></div>',
-	triggerPageThreshold: 5,
-	onRenderComplete: function() {
-		$('.excerpt .thumb').lazyload({
-			placeholder: '/Home/images/occupying.png',
-			threshold: 400
-		});
-		$('.excerpt img').attr('draggable','false');
-		$('.excerpt a').attr('draggable','false');
-	}
-});
+// jQuery.ias({
+// 	history: false,
+// 	container : '.content',
+// 	item: '.excerpt',
+// 	pagination: '.pagination',
+// 	next: '.next-page a',
+// 	trigger: '查看更多',
+// 	loader: '<div class="pagination-loading"><img src="/Home/images/loading.gif" /></div>',
+// 	triggerPageThreshold: 5,
+// 	onRenderComplete: function() {
+// 		$('.excerpt .thumb').lazyload({
+// 			placeholder: '/Home/images/occupying.png',
+// 			threshold: 400
+// 		});
+// 		$('.excerpt img').attr('draggable','false');
+// 		$('.excerpt a').attr('draggable','false');
+// 	}
+// });
 
 
 //禁止右键菜单
@@ -144,41 +144,41 @@ jQuery.ias({
 };*/
 
 /*自定义右键菜单*/
-(function () {
-    var oMenu = document.getElementById("rightClickMenu");
-    var aLi = oMenu.getElementsByTagName("li");
-	//加载后隐藏自定义右键菜单
-	//oMenu.style.display = "none";
-    //菜单鼠标移入/移出样式
-    for (i = 0; i < aLi.length; i++) {
-        //鼠标移入样式
-        aLi[i].onmouseover = function () {
-            $(this).addClass('rightClickMenuActive');
-			//this.className = "rightClickMenuActive";
-        };
-        //鼠标移出样式
-        aLi[i].onmouseout = function () {
-            $(this).removeClass('rightClickMenuActive');
-			//this.className = "";
-        };
-    }
-    //自定义菜单
-    document.oncontextmenu = function (event) {
-		$(oMenu).fadeOut(0);
-        var event = event || window.event;
-        var style = oMenu.style;
-        $(oMenu).fadeIn(300);
-		//style.display = "block";
-        style.top = event.clientY + "px";
-        style.left = event.clientX + "px";
-        return false;
-    };
-    //页面点击后自定义菜单消失
-    document.onclick = function () {
-        $(oMenu).fadeOut(100);
-		//oMenu.style.display = "none"
-    }
-})();
+// (function () {
+//     var oMenu = document.getElementById("rightClickMenu");
+//     var aLi = oMenu.getElementsByTagName("li");
+// 	//加载后隐藏自定义右键菜单
+// 	//oMenu.style.display = "none";
+//     //菜单鼠标移入/移出样式
+//     for (i = 0; i < aLi.length; i++) {
+//         //鼠标移入样式
+//         aLi[i].onmouseover = function () {
+//             $(this).addClass('rightClickMenuActive');
+// 			//this.className = "rightClickMenuActive";
+//         };
+//         //鼠标移出样式
+//         aLi[i].onmouseout = function () {
+//             $(this).removeClass('rightClickMenuActive');
+// 			//this.className = "";
+//         };
+//     }
+//     //自定义菜单
+//     document.oncontextmenu = function (event) {
+// 		$(oMenu).fadeOut(0);
+//         var event = event || window.event;
+//         var style = oMenu.style;
+//         $(oMenu).fadeIn(300);
+// 		//style.display = "block";
+//         style.top = event.clientY + "px";
+//         style.left = event.clientX + "px";
+//         return false;
+//     };
+//     //页面点击后自定义菜单消失
+//     document.onclick = function () {
+//         $(oMenu).fadeOut(100);
+// 		//oMenu.style.display = "none"
+//     }
+// })();
 
 /*禁止键盘操作*/
 // document.onkeydown=function(event){
